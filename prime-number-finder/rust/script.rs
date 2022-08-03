@@ -9,11 +9,18 @@ fn main() {
     let primes_until: i32 = args[1].parse().unwrap();
     println!("{}", primes_until);
 
+    let mut primes = Vec::new();
     for i in 2..primes_until {
         if is_prime(i) {
-            println!("{} is prime", i);
+            primes.push(i);
         }
     }
+
+    for prime in &primes {
+        println!("{}", prime);
+    }
+
+    println!("number of primes: {}", primes.len());
 }
 
 fn is_prime(num: i32) -> bool {
