@@ -2,7 +2,7 @@ import fs from "fs";
 
 async function main() {
   const input = fs.readFileSync("../glider.txt", "utf-8");
-  const startState= input.replaceAll("\n", "");
+  const startState = input.replaceAll("\n", "");
   const numRows = getRows(input);
   const numCols = getCols(input);
   const numCells = numCols * numRows;
@@ -89,12 +89,12 @@ function getNumNeighbours(cells, index, numCols) {
   return neighbourCount;
 }
 
-function getRows(startState) {
-  return startState.split("\n").length - 1; // not sure why this has 1 extra
+function getRows(input) {
+  return input.split("\n").length - 1; // not sure why this has 1 extra
 }
 
-function getCols(startState) {
-  return startState.split("\n")[0].split("").length;
+function getCols(input) {
+  return input.split("\n")[0].split("").length;
 }
 
 main();
